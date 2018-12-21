@@ -7,7 +7,7 @@ int main() {
   for(int i = ny-1; i >= 0; i--) {
     for(int j = 0; j < nx; j++) {
       float r = float(j) / float(nx);
-      float g = floar(i) / float(ny);
+      float g = float(i) / float(ny);
       float b = 0.2;
       int ir = int(255.99*r);
       int ig = int(255.99*g);
