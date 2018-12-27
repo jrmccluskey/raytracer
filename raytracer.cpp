@@ -23,7 +23,7 @@ int main() {
   int nx = 200;
   int ny = 100;
   std::cout << "P3\n" << nx << " " << ny << "\n255\n";
-  vec3 lowerLeftCorner = (-2.0, -1.0, -1.0);
+  vec3 lowerLeftCorner(-2.0, -1.0, -1.0);
   vec3 horizontal(4.0, 0.0, 0.0);
   vec3 vertical(0.0, 2.0, 0.0);
   vec3 origin(0.0, 0.0, 0.0);
@@ -38,7 +38,7 @@ int main() {
       int ig = int(255.99 * col[1]);
       int ib = int(255.99 * col[2]);
 
-      std:cout << ir << " " << ig << " " << ib << "\n";
+      std::cout << ir << " " << ig << " " << ib << "\n";
     }
   }
 }
