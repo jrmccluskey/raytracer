@@ -6,7 +6,7 @@ bool hitSphere(const vec3& center, double radius, const ray& r) {
   double a = dot(r.direction(), r.direction());
   double b = 2.0 * dot(oc, r.direction());
   double c = dot(oc, oc) - radius*radius;
-  double discriminant = b*b - -4*a*c;
+  double discriminant = (b*b) - (4*a*c);
   return (discriminant > 0);
 }
 
