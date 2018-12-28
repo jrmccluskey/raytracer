@@ -4,14 +4,14 @@
 #include "ray.h"
 
 struct hit_record {
-  double t;
+  float t;
   vec3 p;
   vec3 normal;
 };
 
 class hitable {
 public:
-  virtual bool hit(const ray& r, double tMin, double tMax, hit_record& rec) const = 0;
+  virtual bool hit(const ray& r, float tMin, float tMax, hit_record& rec) const = 0;
 };
 
 #endif

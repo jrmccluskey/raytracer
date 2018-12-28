@@ -12,7 +12,7 @@ public:
     origin = vec3(0.0, 0.0, 0.0);
   }
 
-  ray getRay(double u, double v) {return ray(origin, lowerLeftCorner+ u*horizontal + v*vertical - origin);}
+  ray getRay(float u, float v) {return ray(origin, lowerLeftCorner+ u*horizontal + v*vertical - origin);}
 
   vec3 origin;
   vec3 lowerLeftCorner;
