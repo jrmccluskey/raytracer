@@ -23,7 +23,7 @@ bool hitableList::hit(const ray& r, double tMin, double tMax, hit_record& rec) c
       rec = tempRec;
     }
   }
-  return hitAnything
+  return hitAnything;
 }
 
 #endif

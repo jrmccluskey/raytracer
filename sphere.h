@@ -13,7 +13,7 @@ public:
 };
 
 bool sphere::hit(const ray& r, double tMin, double tMax, hit_record& rec) const {
-  vec3 oc = r.origin - center;
+  vec3 oc = r.origin() - center;
   double a = dot(r.direction(), r.direction());
   double b = dot(oc, r.direction());
   double c = dot(oc, oc) - radius*radius;
@@ -26,7 +26,7 @@ bool sphere::hit(const ray& r, double tMin, double tMax, hit_record& rec) const 
       rec.normal = (rec.p - center) / radius;
       return true;
     }
-    temp = (-n + sqrt(b*b - a*c))/a;
+    temp = (-b + sqrt(b*b - a*c))/a;
     if(temp < tMax && temp > tMin) {
       rec.t = temp;
       rec.p = r.pointAtParameter(rec.t);
