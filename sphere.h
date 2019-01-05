@@ -19,7 +19,7 @@ bool sphere::hit(const ray& r, double tMin, double tMax, hit_record& rec) const 
   double c = dot(oc, oc) - radius*radius;
   double discriminant = b*b - a*c;
   if(discriminant > 0) {
-    double temp = -b - sqrt(b*b - a*c)/a;
+    double temp = (-b - sqrt(b*b - a*c))/a;
     if(temp < tMax && temp > tMin) {
       rec.t = temp;
       rec.p = r.pointAtParameter(rec.t);
