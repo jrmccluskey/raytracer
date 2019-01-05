@@ -5,11 +5,18 @@
 
 class camera {
 public:
-  camera() {
-    lowerLeftCorner = vec3(-2.0 ,-1.0, -1.0);
-    horizontal = vec3(4.0, 0.0, 0.0);
-    vertical = vec3(0.0, 2.0, 0.0);
-    origin = vec3(0.0, 0.0, 0.0);
+  camera(vec3 lookFrom, vec3 lookAt, vec3 vUp, double vfov, double aspect) {
+    vec3 u, v, w;
+    double theta = vfov*M_PI/180;
+    double halfHeight = tan(theta/2);
+    double halfWidth = aspect*halfHeight;
+    origin = lookFrom;
+    w = unitVector(lookFrom - lookAt);
+    u = unitVector(cross(vUp, w));
+    v = cross(w, u);
+    lowerLeftCorner = origin - halfWidth*u - halfHeight*v - w;
+    horizontal = 2*halfWidth*u;
+    vertical = 2*halfHeight*v;
   }
 
   ray getRay(double u, double v) {return ray(origin, lowerLeftCorner+ u*horizontal + v*vertical - origin);}
